@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>sam_lachance<%= @title %></h1>
+<%= render partial: "header" %>
 <%= render partial: "sidebar" %>
 <div class="content">
   <%= yield %>

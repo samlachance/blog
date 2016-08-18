@@ -28,3 +28,7 @@ div.sidebar {
 div.sidebar ul {
   padding: 0;
 }
+
+header {
+  padding: 0 20px;
+}
