@@ -3,7 +3,7 @@
 </h2>
 
 <p class="date">
-  Submitted <%= time_ago_in_words(@post.created_at) %> ago.
+  Submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.first_name %>.
 </p>
 
 <p class="body">

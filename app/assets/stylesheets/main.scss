@@ -1,0 +1,18 @@
+$heading: 'Scope One', serif;
+$body: 'Playfair Display', serif;
+
+body {
+  font-family: $body;
+}
+
+div.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+h1.logo a{
+  font-family: $heading;
+  text-decoration: none;
+  color: black;
+}

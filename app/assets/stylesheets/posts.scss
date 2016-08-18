@@ -3,18 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.sidebar {
   float: left;
-  width: 100px;
+  width: 150px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding-left: 30px;
 
   ul {
-    padding-left: 5px;
+    padding: 0;
+
+    li {
+      margin-bottom: 5px;
+    }
   }
 }
 
 div.content {
   float: left;
   padding-left: 20px;
+  width: 100%;
+  max-width: 790px;
+  box-sizing: border-box;
 
-  h2 {
-    margin-top: 0;
+  h2.title {
+    margin: 0;
   }
+  
+  div.post-wrapper {
+    margin-bottom: 25px;
+  }
+}
+
+input, textarea, {
+  width: 500px;
+  margin-bottom: 25px;
+}
+
+textarea {
+  height: 500px;
 }

@@ -1,16 +1,16 @@
 class PostsController < ApplicationController
   def index
     @title = "/docs"
-    @post = Post.all.order('created_at DESC')
+    @post = Post.last
   end
 
   def new
+    
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     @post.save
-
     redirect_to @post
   end
 

@@ -1,11 +1,9 @@
-<h1>new post</h1>
+<h2 class="title">new post</h2>
 
 <%= form_for :post, url: posts_path do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, placeholder: "Title" %>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, placeholder: "Body" %>
 
   <%= f.submit %>
 <% end %>
