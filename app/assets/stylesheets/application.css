@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+}
+
+div.sidebar {
+  float: left;
+  width: 100px;
+  padding-left: 40px;
+  background-color: #AAA;
+}
+
+div.sidebar ul {
+  padding: 0;
+}
