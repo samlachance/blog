@@ -27,7 +27,9 @@ gem 'redcarpet'
 
 gem 'devise'
 
-gem 'pg'
+#gem 'nokogiri'
+
+#gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,3 +51,7 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'unicorn'
+  gem 'pg'
+end
