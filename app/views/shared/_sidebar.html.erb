@@ -1,17 +1,21 @@
 <div class="sidebar">
   <ul>
     <% posts_for_sidebar.each do |post| %>
-    <li><%= link_to post.title, post  %></li>
+      <li><%= link_to post.title, post  %></li>
     <% end %>
-    <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
   </ul>
-
+  <ul>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to('New Post', controller: "posts", action: "new") %>
+      </li>
+      <li>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to('Login', new_user_session_path)  %>
+      </li>
+    <% end %>
+  </ul>
 </div>
