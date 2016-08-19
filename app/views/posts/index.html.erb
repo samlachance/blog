@@ -1,11 +1,15 @@
-<h2 class="title">
-  <%= @post.title %>
-</h2>
+<% if @post = nil  %>
+  <p>No Posts</p>
+<% else %>
+  <h2 class="title">
+    <%= @post.title %>
+  </h2>
 
-<p class="date">
-  Submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.first_name %>.
-</p>
+  <p class="date">
+    Submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.first_name %>.
+  </p>
 
-<p class="body">
-  <%= markdown(@post.body) %>
-</p>
+  <p class="body">
+    <%= markdown(@post.body) %>
+  </p>
+<% end %>
