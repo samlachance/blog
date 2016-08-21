@@ -16,6 +16,10 @@ div.sidebar {
 
     li {
       margin-bottom: 5px;
+      
+      &:first-child {
+        margin-top: 5px;
+      }
     }
   }
 }
