@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit]
   def index
-    @title = "/docs"
-    @post = Post.last
+    @post = Post.where(published: true).last
   end
 
   def new
@@ -42,7 +41,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    
+
     unless @post.published? || user_signed_in?
       redirect_to root_path
     end
