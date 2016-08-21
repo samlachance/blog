@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :authenticate_user!, only: [:new, :create, :edit]
   def index
     @title = "/docs"
     @post = Post.last
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :body))
+    if @post.update(params[:post].permit(:title, :body, :published))
       redirect_to @post
     else
       render 'edit'
@@ -42,7 +42,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @title = "/docs/#{@post.title}"
+    
+    unless @post.published? || user_signed_in?
+      redirect_to root_path
+    end
   end
 
   private

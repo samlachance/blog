@@ -10,8 +10,12 @@
     </div>
   <% end %>
   <%= f.text_field :title, placeholder: "Title" %>
+  
+  <%= f.label "published", :published %>
+  <%= f.check_box :published %>
 
   <%= f.text_area :body, placeholder: "Body" %>
+
 
   <%= f.submit %>
 <% end %>
