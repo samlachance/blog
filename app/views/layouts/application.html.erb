@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Playfair+Display|Scope+One' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
 <div class="wrapper">
