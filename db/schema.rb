@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823154507) do
+ActiveRecord::Schema.define(version: 20160823162230) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20160823154507) do
     t.integer  "user_id"
     t.boolean  "published"
     t.string   "description"
+  end
+
+  create_table "qsos", force: :cascade do |t|
+    t.datetime "date"
+    t.string   "de"
+    t.string   "band"
+    t.string   "mode"
+    t.string   "country"
+    t.string   "op"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

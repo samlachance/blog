@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-08-23 12:06:32
+  de: MyString
+  band: MyString
+  mode: MyString
+  country: MyString
+  op: MyString
+
+two:
+  date: 2016-08-23 12:06:32
+  de: MyString
+  band: MyString
+  mode: MyString
+  country: MyString
+  op: MyString

@@ -1,0 +1,14 @@
+<h1>test</h1>
+<table>
+<% @qsos.each do |qso| %>
+  <tr>
+    <td><%= qso.de %></td>
+    <td><%= qso.date.strftime("%m-%d-%Y") %></td>
+    <td><%= qso.date.strftime("%H:%M") %></td>
+    <td><%= qso.band %></td>
+    <td><%= qso.mode %></td>
+    <td><%= qso.country %></td>
+    <td><%= qso.op %></td>
+  </tr>
+<% end %>
+</table>

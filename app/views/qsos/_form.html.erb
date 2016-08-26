@@ -1,0 +1,24 @@
+<%= form_for @qso do |f| %>
+  <% if @qso.errors.any? %>
+    <div class="errors">
+      <h3><%= pluralize(@qso.errors.count, "error") %> prevented this post from saving.</h3>
+      <ul>
+        <% @qso.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :de, placeholder: "Station ID" %>
+  <%= f.datetime_local_field :date %>
+  <%= f.label :band, "Band" %>
+  <%= f.select :band, [['2m','2m'],['70cm','70cm']] %>
+  <%= f.label :mode, "Mode" %>
+  <%= f.select :mode, [['FM','FM'],['AM','AM']] %>
+  <%= f.text_field :country, placeholder: "Country" %>
+  <%= f.text_field :op, placeholder: "Operator" %>
+
+
+  <%= f.submit %>
+<% end %>
