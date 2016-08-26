@@ -17,9 +17,15 @@
     </ul>
   <% end %>
   <ul>
+    <li>
+      <%= link_to('Ham', '/ham') %>
+    </li>
     <% if user_signed_in? %>
       <li>
         <%= link_to('New Post', controller: "posts", action: "new") %>
+      </li>
+      <li>
+        <%= link_to('New QSO', controller: "qsos", action: "new") %>
       </li>
       <li>
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>

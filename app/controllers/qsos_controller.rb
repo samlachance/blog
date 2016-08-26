@@ -18,6 +18,27 @@ class QsosController < ApplicationController
     end
   end
 
+  def destroy
+    @qso = Qso.find(params[:id])
+    @qso.destroy
+
+    redirect_to '/ham'
+  end
+
+  def edit
+    @qso = Qso.find(params[:id])
+  end
+
+  def update
+    @qso = Qso.find(params[:id])
+
+    if @qso.update(params[:qso].permit(:date, :de, :band, :mode, :country, :op))
+      redirect_to '/ham'
+    else
+      render 'edit'
+    end
+  end
+
   private
     def qso_params
       params.require(:qso).permit(:date, :de, :band, :mode, :country, :op)

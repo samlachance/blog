@@ -1,3 +1,17 @@
 // Place all the styles related to the qsos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table.qsos {
+  width: 100%;
+
+  tr:nth-child(2n) {
+    background-color: #DDD;
+  }
+
+  td {
+    text-align: center;
+    box-sizing: border-box;
+    width: 13%;
+    border: 0;
+  }
+}

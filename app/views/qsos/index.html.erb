@@ -1,14 +1,35 @@
-<h1>test</h1>
-<table>
+<h2 class="title">KM4WGL</h2>
+<table class="qsos" cellspacing="0">
+  <tr>
+    <th>de</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Band</th>
+    <th>Mode</th>
+    <th>Country</th>
+    <th>op</th>
+  </tr>
 <% @qsos.each do |qso| %>
   <tr>
-    <td><%= qso.de %></td>
-    <td><%= qso.date.strftime("%m-%d-%Y") %></td>
-    <td><%= qso.date.strftime("%H:%M") %></td>
+    <td><%= qso.de.upcase %></td>
+    <% if qso.date %>
+      <td><%= qso.date.strftime("%m-%d-%Y") %></td>
+      <td><%= qso.date.strftime("%H:%M") %></td>
+    <% else %>
+      <td> </td>
+      <td> </td>
+    <% end %>
     <td><%= qso.band %></td>
     <td><%= qso.mode %></td>
     <td><%= qso.country %></td>
     <td><%= qso.op %></td>
+  
+  <% if user_signed_in? && current_user.is_admin %>
+    <td>
+      <%= link_to 'E', edit_qso_path(qso) %>
+      <%= link_to 'X', qso_path(qso), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  <% end %>
   </tr>
 <% end %>
 </table>
