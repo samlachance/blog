@@ -13,7 +13,7 @@
   <%= f.text_field :de, placeholder: "Station ID" %>
   <%= f.datetime_local_field :date %>
   <%= f.label :band, "Band" %>
-  <%= f.select :band, [['2m','2m'], ['70cm','70cm']], ['echolink','echolink'] %>
+  <%= f.select :band, [['2m','2m'], ['70cm','70cm'], ['echolink','echolink']] %>
   <%= f.label :mode, "Mode" %>
   <%= f.select :mode, [['FM','FM'],['AM','AM']] %>
   <%= f.text_field :country, placeholder: "Country" %>
