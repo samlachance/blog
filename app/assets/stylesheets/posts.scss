@@ -38,6 +38,10 @@ div.content {
   div.post-wrapper {
     margin-bottom: 25px;
   }
+
+  img {
+    max-width: 400px;
+  }
 }
 
 input#post_title, input#post_description, textarea, {
